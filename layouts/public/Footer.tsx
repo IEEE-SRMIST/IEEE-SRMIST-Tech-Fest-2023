@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PublicFooter = () => {
-	return <div>PublicFooter</div>;
+	return <footer>PublicFooter</footer>;
 };
 
 export default PublicFooter;

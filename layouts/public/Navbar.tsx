@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PublicNavbar = () => {
-	return <div>PublicNavbar</div>;
+	return <nav>PublicNavbar</nav>;
 };
 
 export default PublicNavbar;
