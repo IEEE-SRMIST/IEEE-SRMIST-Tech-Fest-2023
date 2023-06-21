@@ -10,7 +10,7 @@ const EventCard = (props: eventProps) => {
         <img
           alt="Event-image"
           className="image h-full"
-          src={props.event.imagePath}
+          src={props.event.cover}
         />
       </div>
       <div className="card-contents flex flex-col w-full">
