@@ -142,12 +142,12 @@ a {
 
 @media (max-width: 420px) {
 	.img {
-		width: 300px;
-		height: 250px;
+		width: 275px;
+		height: 225px;
 	}
 	.img::before,
 	.img::after {
-		width: 300px;
-		height: 250px;
+		width: 275px;
+		height: 225px;
 	}
 }
