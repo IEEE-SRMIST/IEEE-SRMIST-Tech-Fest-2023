@@ -40,7 +40,7 @@ export default function Home() {
 				>
 					<source src='/assets/video.webm' />
 				</video>
-				<div className='img mt-60'></div>
+				<div className='img mt-40 2xl:mt-60'></div>
 				<p className='text-lg mt-4'>PRESENTS</p>
 				<h1 className='md:text-7xl sm:text-5xl text-3xl font-extrabold font-syne mt-20'>
 					TechnoZest
@@ -48,8 +48,8 @@ export default function Home() {
 				<h3 className='md:text-2xl sm:text-xl text-lg text-center px-10'>
 					Encounter your canon event across the TechnoVerse
 				</h3>
-				<p className='text-3xl font-extrabold mt-10 flex gap-8 items-center'>
-					<span className='animate-pulse'>COMING SOON</span>
+				<p className='text-3xl animate-pulse font-extrabold mt-10 flex flex-col sm:flex-row justify-center gap-2 sm:gap-8 items-center'>
+					<span>COMING SOON</span>
 					<Countdown date={date} renderer={renderer} />
 				</p>
 			</main>
