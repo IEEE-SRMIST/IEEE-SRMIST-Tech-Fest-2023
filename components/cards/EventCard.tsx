@@ -5,8 +5,9 @@ interface eventProps {
 }
 const EventCard = (props: eventProps) => {
   return (
-    <div className="w-[700px] space-x-10 flex">
-      <div className="image-container w-2/3 bg-black">
+    <div className="w-[800px] space-x-10 flex">
+      {/* alter the width to size the cards  */}
+      <div className="image-container w-2/3">
         <img
           alt="Event-image"
           className="image h-full"
