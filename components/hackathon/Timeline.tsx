@@ -21,8 +21,8 @@ export default function timeline(props: timelineProps) {
                       {index + 1}
                     </h1>
                   </div>
-                  <div className="order-1 bg-primary rounded-lg shadow-xl w-5/12 px-6 py-4">
-                    <h3 className="mb-3 font-bold text-white text-xl">
+                  <div className="order-1 bg-cardDescription rounded-lg shadow-xl w-5/12 px-6 py-4 opacity-50 backdrop-blur hover:opacity-100 ease-in-out duration-200">
+                    <h3 className="mb-3 font-bold text-primary text-xl">
                       {event.name}
                     </h3>
                     {/* <time>{event.date}</time> */}
@@ -30,8 +30,8 @@ export default function timeline(props: timelineProps) {
                       {event.location}
                     </p>
                     <a
-                      href="#"
-                      className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-primary border border-gray-200 rounded-lg duration-200 hover:bg-white hover:text-primary focus:z-10 focus:ring-4 focus:outline-none focus:ring-primary focus:text-primary"
+                      href={event.slug}
+                      className="inline-flex items-center px-4 py-2 text-sm font-medium text-cardDescription duration-200 bg-primary border border-cardDescription rounded-lg hover:bg-white hover:text-primary focus:z-10 focus:ring-4 focus:outline-none focus:ring-primary focus:text-blue-700"
                     >
                       Learn more{" "}
                       <svg
@@ -53,12 +53,12 @@ export default function timeline(props: timelineProps) {
             ) : (
               <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
                 <div className="order-1 w-5/12"></div>
-                <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
+                <div className="z-20 flex items-center order-1 bg-primary shadow-xl w-8 h-8 rounded-full">
                   <h1 className="mx-auto text-white font-semibold text-lg">
-                    {index + 2}
+                    {index + 1}
                   </h1>
                 </div>
-                <div className="order-1 bg-cardDescription rounded-lg shadow-xl w-5/12 px-6 py-4">
+                <div className="order-1 bg-cardDescription rounded-lg shadow-xl w-5/12 px-6 py-4 opacity-50 backdrop-blur hover:opacity-100 ease-in-out duration-200">
                   <h3 className="mb-3 font-bold text-primary text-xl">
                     {event.name}
                   </h3>
@@ -67,8 +67,8 @@ export default function timeline(props: timelineProps) {
                     {event.location}
                   </p>
                   <a
-                    href="#"
-                    className="inline-flex items-center px-4 py-2 text-sm font-medium text-primary duration-200 bg-white border border-cardDescription rounded-lg hover:bg-primary hover:text-cardDescription focus:z-10 focus:ring-4 focus:outline-none focus:ring-primary focus:text-blue-700"
+                    href={event.slug}
+                    className="inline-flex items-center px-4 py-2 text-sm font-medium text-cardDescription duration-200 bg-primary border border-cardDescription rounded-lg hover:bg-white hover:text-primary focus:z-10 focus:ring-4 focus:outline-none focus:ring-primary focus:text-blue-700"
                   >
                     Learn more{" "}
                     <svg
