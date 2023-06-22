@@ -1,8 +1,5 @@
-import { Event } from "@/pages/events/types/types";
+import { Event, eventProps } from "@/pages/events/types/types";
 
-interface eventProps {
-  event: Event;
-}
 const EventCard = (props: eventProps) => {
   return (
     <div className="w-[800px] space-x-10 flex">
@@ -18,7 +15,7 @@ const EventCard = (props: eventProps) => {
         <h1 className="font-syne text-start text-xl font-bold">
           {props.event.name}
         </h1>
-        <p className="font-spaceMono text-cardDescription text-xs">
+        <p className="font-spaceMono text-cardDescription text-sm">
           {props.event.description}
         </p>
       </div>

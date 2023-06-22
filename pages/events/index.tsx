@@ -4,8 +4,9 @@ import PublicNavbar from "@/layouts/public/Navbar";
 import React from "react";
 import getEvents from "./lib/GetEvents";
 import { Event } from "./types/types";
+import Timeline from "@/components/hackathon/Timeline";
 
-const sampleEvents: Event[] = [
+export const sampleEvents: Event[] = [
   {
     name: "Power and Utilities",
     description:
@@ -37,21 +38,30 @@ const AllEventsPage = () => {
     <div>
       <PublicNavbar />
       <h1 className="text-center text-5xl font-syne font-bold mt-10">EVENTS</h1>
-      <div className="h-screen flex justify-center items-center">
+      <div className="card-section h-screen flex justify-center items-center">
         <div className="flex-col justify-start w-9/12">
           <div className="flex flex-col mt-10">
-            {sampleEvents.map((event, index) => (
-              <div
-                key={index}
-                className={`mb-10 ${
-                  index % 2 === 0 ? "" : "flex justify-end "
-                }`}
-              >
-                <EventCard event={event} />
-              </div>
-            ))}
+            {sampleEvents.map((event, index) => {
+              console.log(index);
+              return (
+                <div
+                  key={index}
+                  className={`mb-10 ${
+                    index % 2 === 0 ? "" : "flex justify-end"
+                  }`}
+                >
+                  <EventCard event={event} />
+                </div>
+              );
+            })}
           </div>
         </div>
+      </div>
+      <h1 className="font-syne font-bold text-center -mb-5 text-5xl mt-20">
+        TIMELINE
+      </h1>
+      <div className="">
+        <Timeline events={sampleEvents} />
       </div>
       <PublicFooter />
     </div>

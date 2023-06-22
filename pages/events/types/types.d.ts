@@ -6,4 +6,12 @@ export interface Event {
   description: string;
   cover: string;
   type?: string;
+  slug?: string;
+}
+
+interface eventProps {
+  event: Event;
+}
+interface timelineProps {
+  events: Event[];
 }
