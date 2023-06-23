@@ -11,6 +11,7 @@ export interface Event {
 
 interface eventProps {
   event: Event;
+  index: number;
 }
 interface timelineProps {
   events: Event[];

@@ -21,7 +21,7 @@ export default function timeline(props: timelineProps) {
                       {index + 1}
                     </h1>
                   </div>
-                  <div className="order-1 bg-white bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 rounded-lg shadow-xl w-5/12 px-6 py-4 opacity-50 hover:opacity-100 ease-in-out duration-200">
+                  <div className="order-1 bg-white bg-clip-padding backdrop-filter backdrop-blur-xl rounded-lg shadow-xl w-5/12 px-6 py-4  hover:-translate-y-2 hover:scale-[1.02] ease-in-out transition-all duration-200">
                     <h3 className="mb-3 font-bold text-primary text-xl">
                       {event.name}
                     </h3>
@@ -31,7 +31,7 @@ export default function timeline(props: timelineProps) {
                     </p>
                     <a
                       href={event.slug}
-                      className="inline-flex items-center px-4 py-2 text-sm font-medium text-cardDescription duration-200 bg-primary border border-cardDescription rounded-lg hover:bg-white hover:text-primary focus:z-10 focus:ring-4 focus:outline-none focus:ring-primary focus:text-blue-700"
+                      className="inline-flex items-center px-4 py-2 text-sm font-medium text-cardDescription duration-200 bg-primary border border-cardDescription rounded-lg hover:bg-white hover:text-primary focus:z-10 focus:ring-4 focus:outline-none focus:ring-primary focus:text-blue-700 cursor-pointer"
                     >
                       Learn more{" "}
                       <svg
@@ -58,7 +58,7 @@ export default function timeline(props: timelineProps) {
                     {index + 1}
                   </h1>
                 </div>
-                <div className="order-1 bg-white bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 rounded-lg shadow-xl w-5/12 px-6 py-4 opacity-50 hover:opacity-100 ease-in-out duration-200">
+                <div className="order-1 bg-white bg-clip-padding backdrop-filter backdrop-blur-xl rounded-lg shadow-xl w-5/12 px-6 py-4 hover:-translate-y-2 hover:scale-[1.02] ease-in-out transition-all duration-200">
                   <h3 className="mb-3 font-bold text-primary text-xl">
                     {event.name}
                   </h3>
@@ -68,7 +68,7 @@ export default function timeline(props: timelineProps) {
                   </p>
                   <a
                     href={event.slug}
-                    className="inline-flex items-center px-4 py-2 text-sm font-medium text-cardDescription duration-200 bg-primary border border-cardDescription rounded-lg hover:bg-white hover:text-primary focus:z-10 focus:ring-4 focus:outline-none focus:ring-primary focus:text-blue-700"
+                    className="inline-flex items-center px-4 py-2 text-sm font-medium text-cardDescription duration-200 bg-primary border border-cardDescription rounded-lg hover:bg-white hover:text-primary focus:z-10 focus:ring-4 focus:outline-none focus:ring-primary focus:text-blue-700 cursor-pointer"
                   >
                     Learn more{" "}
                     <svg

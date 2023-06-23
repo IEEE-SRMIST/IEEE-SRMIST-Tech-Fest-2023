@@ -5,6 +5,7 @@ import React from "react";
 import getEvents from "./lib/GetEvents";
 import { Event } from "./types/types";
 import Timeline from "@/components/hackathon/Timeline";
+import PublicLayout from "@/layouts/public/Layout";
 
 export const sampleEvents: Event[] = [
   {
@@ -35,21 +36,15 @@ export const sampleEvents: Event[] = [
 
 const AllEventsPage = () => {
   return (
-    <div>
+    <PublicLayout>
       <h1 className="text-center text-5xl font-syne font-bold mt-10">EVENTS</h1>
       <div className="card-section flex justify-center items-center">
         <div className="flex-col justify-start w-9/12">
-          <div className="flex flex-col mt-10 ">
+          <div className="flex flex-col mt-10">
             {sampleEvents.map((event, index) => {
-              console.log(index);
               return (
-                <div
-                  key={index}
-                  className={`mb-10 ${
-                    index % 2 === 0 ? "" : "flex justify-end"
-                  }`}
-                >
-                  <EventCard event={event} />
+                <div key={index} className={`mb-10 even:justify-end even:flex`}>
+                  <EventCard event={event} index={index} />
                 </div>
               );
             })}
@@ -62,7 +57,7 @@ const AllEventsPage = () => {
       <div className="">
         <Timeline events={sampleEvents} />
       </div>
-    </div>
+    </PublicLayout>
   );
 };
 
