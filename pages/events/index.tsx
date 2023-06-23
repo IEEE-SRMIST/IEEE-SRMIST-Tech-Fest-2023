@@ -36,11 +36,10 @@ export const sampleEvents: Event[] = [
 const AllEventsPage = () => {
   return (
     <div>
-      <PublicNavbar />
       <h1 className="text-center text-5xl font-syne font-bold mt-10">EVENTS</h1>
-      <div className="card-section h-screen flex justify-center items-center">
+      <div className="card-section flex justify-center items-center">
         <div className="flex-col justify-start w-9/12">
-          <div className="flex flex-col mt-10">
+          <div className="flex flex-col mt-10 ">
             {sampleEvents.map((event, index) => {
               console.log(index);
               return (
@@ -63,7 +62,6 @@ const AllEventsPage = () => {
       <div className="">
         <Timeline events={sampleEvents} />
       </div>
-      <PublicFooter />
     </div>
   );
 };

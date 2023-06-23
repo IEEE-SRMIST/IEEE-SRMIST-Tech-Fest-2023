@@ -21,7 +21,7 @@ export default function timeline(props: timelineProps) {
                       {index + 1}
                     </h1>
                   </div>
-                  <div className="order-1 bg-cardDescription rounded-lg shadow-xl w-5/12 px-6 py-4 opacity-50 backdrop-blur hover:opacity-100 ease-in-out duration-200">
+                  <div className="order-1 bg-white bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 rounded-lg shadow-xl w-5/12 px-6 py-4 opacity-50 hover:opacity-100 ease-in-out duration-200">
                     <h3 className="mb-3 font-bold text-primary text-xl">
                       {event.name}
                     </h3>
@@ -58,7 +58,7 @@ export default function timeline(props: timelineProps) {
                     {index + 1}
                   </h1>
                 </div>
-                <div className="order-1 bg-cardDescription rounded-lg shadow-xl w-5/12 px-6 py-4 opacity-50 backdrop-blur hover:opacity-100 ease-in-out duration-200">
+                <div className="order-1 bg-white bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 rounded-lg shadow-xl w-5/12 px-6 py-4 opacity-50 hover:opacity-100 ease-in-out duration-200">
                   <h3 className="mb-3 font-bold text-primary text-xl">
                     {event.name}
                   </h3>
