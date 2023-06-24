@@ -1,4 +1,5 @@
 import { eventProps, timelineProps } from "@/pages/events/types/types";
+import Link from "next/link";
 import React from "react";
 
 export default function timeline(props: timelineProps) {
@@ -29,8 +30,8 @@ export default function timeline(props: timelineProps) {
                     <p className="text-sm leading-snug tracking-wide text-cardDescription text-opacity-100">
                       {event.location}
                     </p>
-                    <a
-                      href={event.slug}
+                    <Link
+                      href={`events/${event.slug}`} // either slug or the uuid
                       className="inline-flex items-center px-4 py-2 text-sm font-medium text-cardDescription duration-200 bg-primary border border-cardDescription rounded-lg hover:bg-white hover:text-primary focus:z-10 focus:ring-4 focus:outline-none focus:ring-primary focus:text-blue-700 cursor-pointer"
                     >
                       Learn more{" "}
@@ -46,7 +47,7 @@ export default function timeline(props: timelineProps) {
                           clip-rule="evenodd"
                         ></path>
                       </svg>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </>
@@ -67,7 +68,7 @@ export default function timeline(props: timelineProps) {
                     {event.location}
                   </p>
                   <a
-                    href={event.slug}
+                    href={`events/${event.slug}`}
                     className="inline-flex items-center px-4 py-2 text-sm font-medium text-cardDescription duration-200 bg-primary border border-cardDescription rounded-lg hover:bg-white hover:text-primary focus:z-10 focus:ring-4 focus:outline-none focus:ring-primary focus:text-blue-700 cursor-pointer"
                   >
                     Learn more{" "}
