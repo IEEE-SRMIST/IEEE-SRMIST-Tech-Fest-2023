@@ -83,6 +83,10 @@ a {
 		brightness(121%) contrast(121%);
 }
 
+.ReactCollapse--collapse {
+	transition: height 500ms;
+}
+
 @keyframes glitch-effect {
 	0% {
 		clip: rect(299px, 400px, 56px, 0);
