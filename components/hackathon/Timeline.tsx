@@ -4,26 +4,23 @@ import React from "react";
 
 export default function timeline(props: timelineProps) {
   return (
-    <div className="container bg-transparent mx-auto w-full h-full">
+    <div className="container bg-transparent mx-auto mt-10w-full h-full">
       <div className="relative wrap overflow-hidden p-10 h-full">
         <div className="border-2-2 left-2/4 absolute border-opacity-20 border-primary h-full border"></div>
 
         {props.events.map((event, index) => (
-          <>
+          <div key={index}>
             {index % 2 === 0 ? (
               <>
-                <div
-                  key={index}
-                  className="mb-8 flex justify-between items-center w-full right-timeline"
-                >
+                <div className="mb-8 flex justify-between items-center w-full right-timeline">
                   <div className="order-1 w-5/12"></div>
-                  <div className="z-20 flex items-center order-1 bg-primary shadow-xl w-8 h-8 rounded-full">
-                    <h1 className="mx-auto font-semibold text-lg text-white">
+                  <div className="z-20 flex items-center order-1 bg-white shadow-xl w-8 h-8 rounded-full">
+                    <h1 className="mx-auto font-semibold text-lg text-primary">
                       {index + 1}
                     </h1>
                   </div>
-                  <div className="order-1 bg-white bg-clip-padding backdrop-filter backdrop-blur-xl rounded-lg shadow-xl w-5/12 px-6 py-4  hover:-translate-y-2 hover:scale-[1.02] ease-in-out transition-all duration-200">
-                    <h3 className="mb-3 font-bold text-primary text-xl">
+                  <div className="order-1 border border-white/25 shadow-white/30 bg-white/10 hover:bg-white/20 backdrop-blur-sm backdrop-opacity-80 rounded-lg transition ease-in-out duration-500 hover:transition hover:ease-in-out hover:duration-500 hover:-translate-y-1 w-5/12 p-6">
+                    <h3 className="mb-3 font-bold text-white text-2xl">
                       {event.name}
                     </h3>
                     {/* <time>{event.date}</time> */}
@@ -32,7 +29,7 @@ export default function timeline(props: timelineProps) {
                     </p>
                     <Link
                       href={`events/${event.slug}`} // either slug or the uuid
-                      className="inline-flex items-center px-4 py-2 text-sm font-medium text-cardDescription duration-200 bg-primary border border-cardDescription rounded-lg hover:bg-white hover:text-primary focus:z-10 focus:ring-4 focus:outline-none focus:ring-primary focus:text-blue-700 cursor-pointer"
+                      className="inline-flex items-center px-4 py-2 font-bold text-md text-primary duration-500 bg-white border-2 border-white rounded-lg hover:bg-white/10 hover:text-white focus:z-10 focus:ring-4 focus:outline-none focus:text-blue-700 cursor-pointer"
                     >
                       Learn more{" "}
                       <svg
@@ -54,13 +51,13 @@ export default function timeline(props: timelineProps) {
             ) : (
               <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
                 <div className="order-1 w-5/12"></div>
-                <div className="z-20 flex items-center order-1 bg-primary shadow-xl w-8 h-8 rounded-full">
-                  <h1 className="mx-auto text-white font-semibold text-lg">
+                <div className="z-20 flex items-center order-1 bg-white shadow-xl w-8 h-8 rounded-full">
+                  <h1 className="mx-auto text-primary font-semibold text-lg">
                     {index + 1}
                   </h1>
                 </div>
-                <div className="order-1 bg-white bg-clip-padding backdrop-filter backdrop-blur-xl rounded-lg shadow-xl w-5/12 px-6 py-4 hover:-translate-y-2 hover:scale-[1.02] ease-in-out transition-all duration-200">
-                  <h3 className="mb-3 font-bold text-primary text-xl">
+                <div className="order-1 border border-white/25 shadow-white/30 bg-white/10 hover:bg-white/20 backdrop-blur-sm backdrop-opacity-80 rounded-lg transition ease-in-out duration-500 hover:transition hover:ease-in-out hover:duration-500 hover:-translate-y-1 w-5/12 p-6">
+                  <h3 className="mb-3 font-bold text-white text-2xl">
                     {event.name}
                   </h3>
                   {/* <time>{event.date}</time> */}
@@ -69,7 +66,7 @@ export default function timeline(props: timelineProps) {
                   </p>
                   <a
                     href={`events/${event.slug}`}
-                    className="inline-flex items-center px-4 py-2 text-sm font-medium text-cardDescription duration-200 bg-primary border border-cardDescription rounded-lg hover:bg-white hover:text-primary focus:z-10 focus:ring-4 focus:outline-none focus:ring-primary focus:text-blue-700 cursor-pointer"
+                    className="inline-flex items-center px-4 py-2 font-bold text-md text-primary duration-500 bg-white border-2 border-white rounded-lg hover:bg-white/10 hover:text-white focus:z-10 focus:ring-4 focus:outline-none focus:text-blue-700 cursor-pointer"
                   >
                     Learn more{" "}
                     <svg
@@ -88,7 +85,7 @@ export default function timeline(props: timelineProps) {
                 </div>
               </div>
             )}
-          </>
+          </div>
         ))}
 
         {/* <div className="mb-8 flex justify-between items-center w-full right-timeline">

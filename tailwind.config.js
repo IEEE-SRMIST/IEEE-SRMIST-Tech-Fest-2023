@@ -13,7 +13,7 @@ module.exports = {
         spaceMono: ["var(--font-space-mono)"],
       },
       colors: {
-        primary: "#14094fe6",
+        primary: "#3D248D",
         cardDescription: "#B2BEFF",
       },
     },
