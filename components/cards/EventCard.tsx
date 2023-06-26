@@ -6,7 +6,7 @@ const EventCard = (props: eventProps) => {
   return (
     <div
       className={`flex flex-col md:flex-row rounded-lg border border-white/25 shadow-white/30 bg-white/10 hover:bg-white/20 backdrop-blur-sm backdrop-opacity-80 transition ease-in-out duration-500 hover:transition hover:ease-in-out hover:duration-500 lg:w-[800px] ${
-        props.index % 2 === 0 ? "" : "flex-row-reverse"
+        props.index % 2 === 0 ? "" : "md:flex-row-reverse"
       }`}
     >
       <div className="image-container w-3/3 md:w-1/2 lg:w-1/3 m-5">
