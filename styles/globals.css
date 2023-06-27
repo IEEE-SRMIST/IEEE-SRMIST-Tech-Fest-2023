@@ -19,11 +19,9 @@ body {
 	background-color: '#FAF9F6';
 	font-family: 'Space Mono', monospace;
 	/* font-family: 'Syne', sans-serif; */
-	background-image: radial-gradient(
-		50% 50% at 50% 50%,
-		rgb(86, 53, 173) 0%,
-		rgb(20, 9, 78) 100%
-	);
+	background-image: radial-gradient(50% 50% at 50% 50%,
+			rgb(86, 53, 173) 0%,
+			rgb(20, 9, 78) 100%);
 }
 
 a {
@@ -53,6 +51,7 @@ a {
 	background-image: url(https://cdn.discordapp.com/attachments/918024642860548126/1121449332030316624/image__1_-removebg-preview.png);
 	filter: brightness(0) invert(1);
 }
+
 .img::before,
 .img::after {
 	content: '';
@@ -68,19 +67,19 @@ a {
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
 .img::before {
 	left: -6px;
 	animation: glitch-effect 2s infinite linear alternate-reverse;
 	background-image: url(https://cdn.discordapp.com/attachments/918024642860548126/1121449332030316624/image__1_-removebg-preview.png);
-	filter: grayscale(100%) sepia(100%) saturate(350%) hue-rotate(240deg)
-		brightness(121%) contrast(121%);
+	filter: grayscale(100%) sepia(100%) saturate(350%) hue-rotate(240deg) brightness(121%) contrast(121%);
 }
+
 .img::after {
 	left: 6px;
 	animation: glitch-effect 3s infinite linear alternate-reverse;
 	background-image: url(https://cdn.discordapp.com/attachments/918024642860548126/1121449332030316624/image__1_-removebg-preview.png);
-	filter: grayscale(100%) sepia(100%) saturate(350%) hue-rotate(120deg)
-		brightness(121%) contrast(121%);
+	filter: grayscale(100%) sepia(100%) saturate(350%) hue-rotate(120deg) brightness(121%) contrast(121%);
 }
 
 .ReactCollapse--collapse {
@@ -91,54 +90,71 @@ a {
 	0% {
 		clip: rect(299px, 400px, 56px, 0);
 	}
+
 	5.8823529412% {
 		clip: rect(126px, 400px, 204px, 0);
 	}
+
 	11.7647058824% {
 		clip: rect(74px, 400px, 62px, 0);
 	}
+
 	17.6470588235% {
 		clip: rect(123px, 400px, 252px, 0);
 	}
+
 	23.5294117647% {
 		clip: rect(280px, 400px, 225px, 0);
 	}
+
 	29.4117647059% {
 		clip: rect(25px, 400px, 202px, 0);
 	}
+
 	35.2941176471% {
 		clip: rect(164px, 400px, 60px, 0);
 	}
+
 	41.1764705882% {
 		clip: rect(110px, 400px, 214px, 0);
 	}
+
 	47.0588235294% {
 		clip: rect(88px, 400px, 104px, 0);
 	}
+
 	52.9411764706% {
 		clip: rect(279px, 400px, 102px, 0);
 	}
+
 	58.8235294118% {
 		clip: rect(64px, 400px, 146px, 0);
 	}
+
 	64.7058823529% {
 		clip: rect(47px, 400px, 12px, 0);
 	}
+
 	70.5882352941% {
 		clip: rect(296px, 400px, 166px, 0);
 	}
+
 	76.4705882353% {
 		clip: rect(202px, 400px, 264px, 0);
 	}
+
 	82.3529411765% {
 		clip: rect(183px, 400px, 248px, 0);
 	}
+
 	88.2352941176% {
 		clip: rect(27px, 400px, 36px, 0);
 	}
+
 	94.1176470588% {
 		clip: rect(266px, 400px, 195px, 0);
 	}
+
 	100% {
 		clip: rect(126px, 400px, 198px, 0);
 	}
@@ -155,3 +171,40 @@ a {
 		height: 225px;
 	}
 }
+
+
+/* Sponsors starts */
+
+@keyframes slideAnim {
+	from {
+		transform: translateX(0%);
+	}
+
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+.looper__innerList[data-animate="true"] .looper__listInstance {
+	animation: slideAnim linear infinite;
+}
+
+.looper__innerList {
+	display: flex;
+	justify-content: center;
+	width: fit-content;
+}
+
+.looper__innerList[data-animate="true"] .looper__listInstance {
+	animation: slideAnim linear infinite;
+}
+
+.looper__listInstance {
+	display: flex;
+	width: max-content;
+
+	animation: none;
+}
+
+/* Sponsors ends */
+
