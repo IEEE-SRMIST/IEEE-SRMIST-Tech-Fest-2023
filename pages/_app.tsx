@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { Syne, Space_Mono } from '@next/font/google';
 import Head from 'next/head';
+import Navbar from '@/components/layout/Navbar';
 
 const syne = Syne({
 	style: ['normal'],
@@ -31,6 +32,7 @@ export default function App({ Component, pageProps }: AppProps) {
 			<main
 				className={`${syne.variable} ${spaceMono.variable} font-spaceMono`}
 			>
+				<Navbar/>
 				<Component {...pageProps} />
 			</main>
 		</>
