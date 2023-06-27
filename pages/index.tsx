@@ -4,6 +4,8 @@ import Countdown, { CountdownRenderProps } from 'react-countdown';
 // import logo from '../public/assets/ieee_logo.png';
 import { dateWithTimeZone } from '@/utils/date';
 import Head from 'next/head';
+import Timeline from '@/components/landing/Timeline';
+import FAQs from '@/components/landing/FAQs';
 
 export default function Home() {
 	const date = useMemo(() => {
@@ -40,18 +42,8 @@ export default function Home() {
 				>
 					<source src='/assets/video.webm' />
 				</video>
-				<div className='img mt-40 2xl:mt-60'></div>
-				<p className='text-lg mt-4'>PRESENTS</p>
-				<h1 className='md:text-7xl sm:text-5xl text-3xl font-extrabold font-syne mt-20'>
-					TechnoZest
-				</h1>
-				<h3 className='md:text-2xl sm:text-xl text-lg text-center px-10'>
-					Encounter your canon event across the TechnoVerse
-				</h3>
-				<p className='text-3xl animate-pulse font-extrabold mt-10 flex flex-col sm:flex-row justify-center gap-2 sm:gap-8 items-center'>
-					<span>COMING SOON</span>
-					<Countdown date={date} renderer={renderer} />
-				</p>
+				<Timeline />
+				<FAQs />
 			</main>
 		</>
 	);
