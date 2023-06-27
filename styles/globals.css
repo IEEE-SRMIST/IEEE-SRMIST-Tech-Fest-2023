@@ -82,6 +82,10 @@ a {
 	filter: grayscale(100%) sepia(100%) saturate(350%) hue-rotate(120deg) brightness(121%) contrast(121%);
 }
 
+.ReactCollapse--collapse {
+	transition: height 500ms;
+}
+
 @keyframes glitch-effect {
 	0% {
 		clip: rect(299px, 400px, 56px, 0);
@@ -161,7 +165,6 @@ a {
 		width: 275px;
 		height: 225px;
 	}
-
 	.img::before,
 	.img::after {
 		width: 275px;
@@ -204,3 +207,4 @@ a {
 }
 
 /* Sponsors ends */
+
