@@ -6,6 +6,8 @@ import { dateWithTimeZone } from '@/utils/date';
 import Head from 'next/head';
 import Timeline from '@/components/landing/Timeline';
 import FAQs from '@/components/landing/FAQs';
+import Hero from '@/components/landing/Hero';
+import Sponsors from '@/components/landing/Sponsors';
 
 export default function Home() {
 	const date = useMemo(() => {
@@ -42,6 +44,8 @@ export default function Home() {
 				>
 					<source src='/assets/video.webm' />
 				</video>
+				<Hero />
+				<Sponsors />
 				<Timeline />
 				<FAQs />
 			</main>
