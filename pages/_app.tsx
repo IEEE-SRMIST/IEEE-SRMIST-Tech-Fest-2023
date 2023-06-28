@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { Syne, Space_Mono } from '@next/font/google';
 import Head from 'next/head';
+import Footer from '@/components/layout/Footer';
 
 const syne = Syne({
 	style: ['normal'],
@@ -33,6 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
 			>
 				<Component {...pageProps} />
 			</main>
+			<Footer/>
 		</>
 	);
 }
