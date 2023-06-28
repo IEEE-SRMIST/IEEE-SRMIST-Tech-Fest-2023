@@ -6,7 +6,7 @@ export default function timeline(props: timelineProps) {
   return (
     <div className="container bg-transparent mx-auto mt-10w-full h-full">
       <div className="relative wrap overflow-hidden p-10 h-full">
-        <div className="border-2-2 left-2/4 absolute border-opacity-20 border-primary h-full border"></div>
+        <div className="border-2-2 left-2/4 absolute border-opacity-20 border-white h-full border"></div>
 
         {props.events.map((event, index) => (
           <div key={index}>

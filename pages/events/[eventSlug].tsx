@@ -16,11 +16,6 @@ const SingleEventPage = () => {
   return (
     <PublicLayout>
       <div className="flex flex-col justify-center items-center">
-        <img
-          src={"/test2.jpg"} // map image here
-          alt="Event cover"
-          className="w-3/5 rounded-3xl"
-        />
         <SingleEventCard />
         {/* feed the event out of the response into the props */}
       </div>

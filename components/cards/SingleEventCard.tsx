@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export default function SingleEventCard() {
@@ -6,6 +7,32 @@ export default function SingleEventCard() {
       <h1 className="font-syne font-bold text-left text-5xl mb-10 ">
         Event Name
       </h1>
+      <div className="image-section space-x-5 flex items-center h-[600px] mb-10">
+        <div className="speaker-img flex flex-col justify-center items-center space-y-4">
+          <Image
+            src="/SingleEventPage/assets/speaker.png"
+            alt=""
+            className="rounded-full hover:-translate-y-3 duration-200 transition-all ease-in-out"
+            height={300}
+            width={300}
+          />
+          <h2 className="font-syne font-bold text-5xl text-white">
+            Kunal Keshan
+          </h2>
+          <p className="speaker-description font-syne text-cardDescription font-light text-xl w-3/4">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+            doloremque dignissimos a magnam, in reiciendis non minus molestias
+            quisquam error.
+          </p>
+        </div>
+        <Image
+          src={"/test2.jpg"} // map image here
+          alt="Event cover"
+          className="rounded-3xl"
+          height={850}
+          width={850}
+        />
+      </div>
       <div className="details-row flex justify-around">
         <div className="date flex space-x-5 items-center">
           <img
@@ -64,7 +91,7 @@ export default function SingleEventCard() {
           </li>
         </ul>
       </div>
-      <hr className="my-20 h-0.5 border-t-0 border-dashed bg-white/70 opacity-25" />
+      {/* <hr className="my-20 h-0.5 border-t-0 border-dashed bg-white/70 opacity-25" />
       <div className="event-speaker w-full">
         <h1 className="font-syne font-bold text-6xl mb-2">Event Speaker</h1>
         <div className="speaker-img flex flex-col justify-center items-center space-y-4">
@@ -82,7 +109,8 @@ export default function SingleEventCard() {
             quisquam error.
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
+// todo: add the shifting gradient and make data dynamic
