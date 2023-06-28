@@ -1,5 +1,9 @@
-function hackathon() {
-	return <div>hackathon</div>;
-}
+import FAQ from '../components/hackathon/faqs';
 
-export default hackathon;
+export default function Home() {
+  return (
+    <div>
+      <FAQ />
+    </div>
+  );
+}
