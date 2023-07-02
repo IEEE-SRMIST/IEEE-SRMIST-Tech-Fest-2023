@@ -4,6 +4,7 @@ import { Syne, Space_Mono } from '@next/font/google';
 import Head from 'next/head';
 import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
+import { AuthProvider } from '@/context/AppContext';
 
 const syne = Syne({
 	style: ['normal'],
@@ -23,7 +24,7 @@ const spaceMono = Space_Mono({
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
-		<>
+		<AuthProvider>
 			<Head>
 				<meta
 					name='viewport'
@@ -33,10 +34,10 @@ export default function App({ Component, pageProps }: AppProps) {
 			<main
 				className={`${syne.variable} ${spaceMono.variable} font-spaceMono`}
 			>
-				<Navbar/>
+				<Navbar />
 				<Component {...pageProps} />
 			</main>
-			<Footer/>
-		</>
+			<Footer />
+		</AuthProvider>
 	);
 }
