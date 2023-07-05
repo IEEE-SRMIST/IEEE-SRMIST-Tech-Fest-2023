@@ -27,7 +27,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
 	return (
 		<AuthContext.Provider value={{}}>
-			{initialLoader ? 'Loading...' : children}
+			{initialLoader ? (
+				<main className='w-full min-h-screen flex items-center justify-center flex-col'>
+					<div className='img'></div>
+					<p>Loading...</p>
+				</main>
+			) : (
+				children
+			)}
 		</AuthContext.Provider>
 	);
 };

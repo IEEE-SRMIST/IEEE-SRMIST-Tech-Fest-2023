@@ -3,6 +3,8 @@ import { User } from 'firebase/auth';
 
 export interface IUser extends User {
 	registerNo: string;
+	year: string;
+	dept: string;
 }
 
 export interface UserSlice {

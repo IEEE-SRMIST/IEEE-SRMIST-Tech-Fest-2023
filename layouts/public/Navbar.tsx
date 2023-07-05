@@ -1,15 +1,36 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { FirebaseAuth, FirebaseDb } from '@/firebase';
+import { GoogleAuthProvider } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
+	const [color, setColor] = useState('bg-transparent');
+
+	const changeNavbarColor = () => {
+		if (window.scrollY >= 50) {
+			setColor('bg-primary bg-opacity-[80%] backdrop-blur-md shadow-xl');
+		} else {
+			setColor('bg-transparent');
+		}
+	};
+	useEffect(() => {
+		window.addEventListener('scroll', changeNavbarColor);
+		return () => window.removeEventListener('scroll', changeNavbarColor);
+	}, []);
 
 	const toggleMenu = () => {
 		setIsOpen(!isOpen);
 	};
+
+	const handleLoginWithFirebase = async () => {};
+
 	return (
 		<nav className='fixed w-screen' style={{ zIndex: 2 }}>
-			<div className='bg-transparent flex justify-between px-10 py-6'>
+			<div
+				className={`${color} flex justify-between px-10 py-6 transition-all duration-300`}
+			>
 				<div className='cursor-pointer'>
 					<div>
 						<Image
@@ -69,7 +90,7 @@ const Navbar = () => {
 							Hackathon
 						</li>
 						<button className='border px-6 py-2 rounded-full bg-[#14094fe6] font-semibold hover:bg-purple-600 duration-300 text-xl'>
-							login
+							Login
 						</button>
 					</ul>
 				</div>
