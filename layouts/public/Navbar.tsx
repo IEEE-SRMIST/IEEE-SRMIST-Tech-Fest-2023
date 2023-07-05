@@ -1,12 +1,20 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { FirebaseAuth, FirebaseDb } from '@/firebase';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
+import { FirebaseError } from 'firebase/app';
+import { toast } from 'react-hot-toast';
+import { useAppStore } from '@/store/store';
+import { IUser } from '@/store/slices/user';
+import Link from 'next/link';
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [color, setColor] = useState('bg-transparent');
+	const [loading, setLoading] = useState(false);
+
+	const { user, setUser } = useAppStore();
 
 	const changeNavbarColor = () => {
 		if (window.scrollY >= 50) {
@@ -24,7 +32,46 @@ const Navbar = () => {
 		setIsOpen(!isOpen);
 	};
 
-	const handleLoginWithFirebase = async () => {};
+	const handleLoginWithFirebase = async () => {
+		const provider = new GoogleAuthProvider();
+		try {
+			setLoading(true);
+			const response = await signInWithPopup(FirebaseAuth, provider);
+			if (
+				response.user.metadata.creationTime ===
+				response.user.metadata.lastSignInTime
+			) {
+				const userRef = doc(FirebaseDb, 'users', response.user.uid);
+				setDoc(userRef, {
+					displayName: response.user.displayName,
+					email: response.user.email,
+					phoneNumber: response.user.phoneNumber,
+					photoURL: response.user.photoURL,
+					...(/[a-z]{2}[0-9]{4}@srmist\.edu\.in/g.test(
+						response.user.email!
+					) && { collegeEmail: response.user.email }),
+				});
+			}
+			setUser(response.user as IUser);
+		} catch (error) {
+			if (error instanceof FirebaseError) {
+				switch (error.code) {
+					case 'auth/popup-closed-by-user': {
+						toast.error(
+							'Do not close popup before selecting email.'
+						);
+						break;
+					}
+					default: {
+						toast.error('Unable to login. Try again later.');
+						break;
+					}
+				}
+			}
+		} finally {
+			setLoading(false);
+		}
+	};
 
 	return (
 		<nav className='fixed w-screen' style={{ zIndex: 2 }}>
@@ -55,9 +102,23 @@ const Navbar = () => {
 						</li>
 					</ul>
 				</div>
-				<button className='border px-10 py-2 rounded-full bg-[#14094fe6] font-semibold hover:bg-purple-600 duration-300 lg:block hidden'>
-					LOGIN
-				</button>
+				{!user ? (
+					<button
+						onClick={handleLoginWithFirebase}
+						disabled={loading}
+						className='border px-10 py-2 rounded-full bg-[#14094fe6] font-semibold hover:bg-purple-600 duration-300 lg:block hidden'
+					>
+						{loading ? 'Loading...' : 'LOGIN'}
+					</button>
+				) : (
+					<Link
+						href={'/dashboard'}
+						className='border px-10 py-2 rounded-full bg-[#14094fe6] font-semibold hover:bg-purple-600 duration-300 lg:block hidden'
+					>
+						Dashboard
+					</Link>
+				)}
+
 				<div className='lg:hidden flex'>
 					<button onClick={toggleMenu} className='focus:outline-none'>
 						<svg
@@ -89,9 +150,22 @@ const Navbar = () => {
 						<li className='cursor-pointer hover:underline underline-offset-8 duration-200 decoration-purple-200 text-purple-200 text-xl'>
 							Hackathon
 						</li>
-						<button className='border px-6 py-2 rounded-full bg-[#14094fe6] font-semibold hover:bg-purple-600 duration-300 text-xl'>
-							Login
-						</button>
+						{!user ? (
+							<button
+								onClick={handleLoginWithFirebase}
+								disabled={loading}
+								className='border px-6 py-2 rounded-full bg-[#14094fe6] font-semibold hover:bg-purple-600 duration-300 text-xl'
+							>
+								{loading ? 'Loading...' : 'LOGIN'}
+							</button>
+						) : (
+							<Link
+								href={'/dashboard'}
+								className='border px-6 py-2 rounded-full bg-[#14094fe6] font-semibold hover:bg-purple-600 duration-300 text-xl'
+							>
+								Dashboard
+							</Link>
+						)}
 					</ul>
 				</div>
 			)}
