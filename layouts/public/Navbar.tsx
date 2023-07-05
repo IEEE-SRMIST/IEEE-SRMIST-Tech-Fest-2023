@@ -8,7 +8,7 @@ const Navbar = () => {
 		setIsOpen(!isOpen);
 	};
 	return (
-		<div className='fixed w-screen' style={{ zIndex: 2 }}>
+		<nav className='fixed w-screen' style={{ zIndex: 2 }}>
 			<div className='bg-transparent flex justify-between px-10 py-6'>
 				<div className='cursor-pointer'>
 					<div>
@@ -74,7 +74,7 @@ const Navbar = () => {
 					</ul>
 				</div>
 			)}
-		</div>
+		</nav>
 	);
 };
 
