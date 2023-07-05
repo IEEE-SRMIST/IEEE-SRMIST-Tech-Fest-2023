@@ -2,9 +2,9 @@ import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { Syne, Space_Mono } from '@next/font/google';
 import Head from 'next/head';
-import Footer from '@/components/layout/Footer';
-import Navbar from '@/components/layout/Navbar';
 import { AuthProvider } from '@/context/AppContext';
+import PublicLayout from '@/layouts/public/Layout';
+import { Toaster } from 'react-hot-toast';
 
 const syne = Syne({
 	style: ['normal'],
@@ -24,20 +24,24 @@ const spaceMono = Space_Mono({
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
-		<AuthProvider>
+		<>
 			<Head>
 				<meta
 					name='viewport'
 					content='width=device-width, initial-scale=1'
 				/>
+				<title>TechnoZest | IEEE SRM SB</title>
 			</Head>
-			<main
-				className={`${syne.variable} ${spaceMono.variable} font-spaceMono`}
-			>
-				<Navbar />
-				<Component {...pageProps} />
-			</main>
-			<Footer />
-		</AuthProvider>
+			<AuthProvider>
+				<PublicLayout>
+					<main
+						className={`${syne.variable} ${spaceMono.variable} font-spaceMono w-full`}
+					>
+						<Component {...pageProps} />
+						<Toaster position='bottom-right' />
+					</main>
+				</PublicLayout>
+			</AuthProvider>
+		</>
 	);
 }
