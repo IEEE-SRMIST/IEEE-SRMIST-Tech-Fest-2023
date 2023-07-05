@@ -2,9 +2,8 @@ import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { Syne, Space_Mono } from '@next/font/google';
 import Head from 'next/head';
-import Footer from '@/components/layout/Footer';
-import Navbar from '@/components/layout/Navbar';
 import { AuthProvider } from '@/context/AppContext';
+import PublicLayout from '@/layouts/public/Layout';
 
 const syne = Syne({
 	style: ['normal'],
@@ -31,13 +30,13 @@ export default function App({ Component, pageProps }: AppProps) {
 					content='width=device-width, initial-scale=1'
 				/>
 			</Head>
-			<main
-				className={`${syne.variable} ${spaceMono.variable} font-spaceMono`}
-			>
-				<Navbar />
-				<Component {...pageProps} />
-			</main>
-			<Footer />
+			<PublicLayout>
+				<main
+					className={`${syne.variable} ${spaceMono.variable} font-spaceMono w-full`}
+				>
+					<Component {...pageProps} />
+				</main>
+			</PublicLayout>
 		</AuthProvider>
 	);
 }
