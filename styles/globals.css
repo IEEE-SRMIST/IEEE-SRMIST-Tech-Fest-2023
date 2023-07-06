@@ -22,7 +22,7 @@ body {
 	background-image: radial-gradient(
 		50% 50% at 50% 50%,
 		rgb(86, 53, 173) 0%,
-		rgb(20, 9, 78) 100%
+		rgb(20, 9, 78) 150%
 	);
 }
 
@@ -79,8 +79,28 @@ a {
 	left: 6px;
 	animation: glitch-effect 3s infinite linear alternate-reverse;
 	background-image: url(https://cdn.discordapp.com/attachments/918024642860548126/1121449332030316624/image__1_-removebg-preview.png);
-	filter: grayscale(100%) sepia(100%) saturate(350%) hue-rotate(120deg)
-		brightness(121%) contrast(121%);
+	filter: grayscale(100%) sepia(100%) saturate(350%) hue-rotate(120deg) brightness(121%) contrast(121%);
+}
+
+.ReactCollapse--collapse {
+	transition: height 500ms;
+}
+
+.link-underline {
+	border-bottom-width: 0;
+	background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+	background-size: 0 3px;
+	background-position: 0 100%;
+	background-repeat: no-repeat;
+	transition: background-size .5s ease-in-out;
+}
+
+.link-underline-black {
+	background-image: linear-gradient(transparent, transparent), linear-gradient(rgb(207, 161, 241), rgb(212, 136, 236))
+}
+.link-underline:hover {
+	background-size: 100% 3px;
+	background-position: 0 100%
 }
 
 @keyframes glitch-effect {
@@ -151,3 +171,40 @@ a {
 		height: 225px;
 	}
 }
+
+
+/* Sponsors starts */
+
+@keyframes slideAnim {
+	from {
+		transform: translateX(0%);
+	}
+
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+.looper__innerList[data-animate="true"] .looper__listInstance {
+	animation: slideAnim linear infinite;
+}
+
+.looper__innerList {
+	display: flex;
+	justify-content: center;
+	width: fit-content;
+}
+
+.looper__innerList[data-animate="true"] .looper__listInstance {
+	animation: slideAnim linear infinite;
+}
+
+.looper__listInstance {
+	display: flex;
+	width: max-content;
+
+	animation: none;
+}
+
+/* Sponsors ends */
+

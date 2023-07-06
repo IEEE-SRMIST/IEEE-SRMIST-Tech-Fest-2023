@@ -1,5 +1,10 @@
+import Prizes from "@/components/hackathon/Prizes";
+
 function hackathon() {
-	return <div>hackathon</div>;
+	return (
+		<Prizes/>
+	);
 }
 
 export default hackathon;
+
