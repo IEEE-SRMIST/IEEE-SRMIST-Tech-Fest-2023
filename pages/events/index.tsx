@@ -1,13 +1,8 @@
-import EventCard from "@/components/cards/EventCard";
-import PublicFooter from "@/layouts/public/Footer";
-import PublicNavbar from "@/layouts/public/Navbar";
-import React from "react";
-import getEvents from "./lib/GetEvents";
+import EventCard from "@/components/events/EventCard";
+import Timeline from "@/components/events/Timeline";
 import { Event } from "./types/types";
-import Timeline from "@/components/hackathon/Timeline";
-import PublicLayout from "@/layouts/public/Layout";
 
-export const sampleEvents: Event[] = [
+export const events: Event[] = [
   {
     name: "Power and Utilities",
     description:
@@ -38,14 +33,14 @@ export const sampleEvents: Event[] = [
   },
 ];
 
-const AllEventsPage = () => {
+const EventsPage = () => {
   return (
-    <PublicLayout>
-      <h1 className="text-center text-5xl font-syne font-bold mt-10">EVENTS</h1>
+    <>
+      <h1 className="text-center text-4xl font-syne font-extrabold mt-32">EVENTS</h1>
       <div className="card-section flex justify-center items-center">
         <div className="flex-col justify-start w-9/12">
           <div className="flex flex-col mt-10">
-            {sampleEvents.map((event, index) => {
+            {events.map((event, index) => {
               return (
                 <div key={index} className={`mb-10 even:justify-end even:flex`}>
                   <EventCard event={event} index={index} />
@@ -55,14 +50,14 @@ const AllEventsPage = () => {
           </div>
         </div>
       </div>
-      <h1 className="font-syne font-bold text-center -mb-5 text-5xl mt-20">
+      <h1 className="font-syne font-bold text-center -mb-5 text-4xl mt-20">
         TIMELINE
       </h1>
       <div className="">
-        <Timeline events={sampleEvents} />
+        <Timeline events={events} />
       </div>
-    </PublicLayout>
+    </>
   );
 };
 
-export default AllEventsPage;
+export default EventsPage;

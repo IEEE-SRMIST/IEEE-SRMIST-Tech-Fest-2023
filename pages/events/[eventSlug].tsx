@@ -1,8 +1,7 @@
-import PublicLayout from "@/layouts/public/Layout";
 import { useRouter } from "next/router";
-import React from "react";
-import getEvent from "./lib/GetEvent";
-import SingleEventCard from "@/components/cards/SingleEventCard";
+
+
+import Event from "@/components/events/Event";
 
 const SingleEventPage = () => {
   const router = useRouter();
@@ -14,12 +13,10 @@ const SingleEventPage = () => {
   //   use this to call event through its slug
 
   return (
-    <PublicLayout>
       <div className="flex flex-col justify-center items-center">
-        <SingleEventCard />
+        <Event />
         {/* feed the event out of the response into the props */}
       </div>
-    </PublicLayout>
   );
 };
 

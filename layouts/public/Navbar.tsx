@@ -9,6 +9,12 @@ import { useAppStore } from '@/store/store';
 import { IUser } from '@/store/slices/user';
 import Link from 'next/link';
 
+const links = [
+	{name: 'HOME', href: "/"},
+	{name: 'EVENTS', href: "/events"},
+	{name: 'HACKATHON', href: "/hackathon"},
+];
+
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [color, setColor] = useState('bg-transparent');
@@ -17,8 +23,8 @@ const Navbar = () => {
 	const { user, setUser } = useAppStore();
 
 	const changeNavbarColor = () => {
-		if (window.scrollY >= 50) {
-			setColor('bg-primary bg-opacity-[80%] backdrop-blur-md shadow-xl');
+		if (window.scrollY >= 30) {
+			setColor('bg-primary bg-opacity-[70%] backdrop-blur-md shadow-xl');
 		} else {
 			setColor('bg-transparent');
 		}
@@ -76,12 +82,12 @@ const Navbar = () => {
 	return (
 		<nav className='fixed w-screen' style={{ zIndex: 2 }}>
 			<div
-				className={`${color} flex justify-between px-10 py-6 transition-all duration-300`}
+				className={`${color} flex justify-between px-10 py-4 transition-all duration-300`}
 			>
 				<div className='cursor-pointer'>
 					<div>
 						<Image
-							src='/assets/logo.svg'
+							src='/assets/layouts/logo.svg'
 							alt='logo'
 							width={50}
 							height={50}
@@ -90,16 +96,14 @@ const Navbar = () => {
 					</div>
 				</div>
 				<div className='hidden lg:flex text-purple-200 space-x-8'>
-					<ul className='flex items-center space-x-20'>
-						<li className='cursor-pointer  duration-200 link link-underline link-underline-black decoration-purple-200 text-purple-200'>
-							HOME
-						</li>
-						<li className='cursor-pointer  duration-200 link link-underline link-underline-black decoration-purple-200 text-purple-200'>
-							EVENTS
-						</li>
-						<li className='cursor-pointer  duration-200 link link-underline link-underline-black decoration-purple-200 text-purple-200'>
-							HACKATHON
-						</li>
+					<ul className='flex items-center font-semibold space-x-20'>
+						{
+							links.map((link, index) => (
+								<Link key={index} href={link.href} className='cursor-pointer  duration-200 link link-underline link-underline-black decoration-purple-200 text-purple-200'>
+									{link.name}
+								</Link>
+							))
+						}
 					</ul>
 				</div>
 				{!user ? (
@@ -113,7 +117,7 @@ const Navbar = () => {
 				) : (
 					<Link
 						href={'/dashboard'}
-						className='border px-10 py-2 rounded-full bg-[#14094fe6] font-semibold hover:bg-purple-600 duration-300 lg:block hidden'
+						className='border px-10 py-2 rounded-full font-semibold hover:bg-white hover:text-primary duration-300 lg:block hidden'
 					>
 						Dashboard
 					</Link>

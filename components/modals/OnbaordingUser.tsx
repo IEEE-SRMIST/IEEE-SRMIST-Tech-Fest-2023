@@ -102,7 +102,7 @@ const OnbaordingUser = () => {
 				<h2 className='font-syne text-2xl mt-8 font-semibold'>
 					One More Step to Unlock the TechnoVerse
 				</h2>
-				<p className='text-lg mt-4 text-justify'>
+				<p className='text-md mt-4 text-justify'>
 					Congratulations on logging in to TechnoZest, the ultimate
 					tech fest experience! We&apos;re thrilled to have you on
 					board. Before you can fully immerse yourself in the exciting
@@ -112,12 +112,12 @@ const OnbaordingUser = () => {
 				<h2 className='font-syne text-2xl mt-8 font-semibold'>
 					Let&apos;s Get to Know You Better!
 				</h2>
-				<p className='text-lg mt-4 text-justify'>
+				<p className='text-md mt-4 text-justify'>
 					In order to ensure a seamless registration process and keep
 					you updated on all the latest happenings at TechnoZest, we
 					kindly request you to provide the following information:
 				</p>
-				<ul className='ml-4 list-disc text-lg mt-4 flex flex-col gap-2 text-justify'>
+				<ul className='ml-4 list-disc text-md mt-4 flex flex-col gap-2 text-justify'>
 					{onboardingContent.map((content, index) => (
 						<li key={index}>
 							<b>{content.title}</b>: {content.description}
@@ -147,7 +147,7 @@ const OnbaordingUser = () => {
 							value={values.displayName}
 							className={`${
 								errors.displayName ? 'border-red-500' : ''
-							} border w-full rounded-lg p-6 text-white bg-cardDescription placeholder:text-white outline-transparent`}
+							} border w-full rounded-lg p-3 text-white bg-primary placeholder:text-white outline-transparent`}
 							placeholder="What's your full name?"
 						/>
 					</div>
@@ -168,7 +168,7 @@ const OnbaordingUser = () => {
 							value={values.regNo}
 							className={`${
 								errors.displayName ? 'border-red-500' : ''
-							} border w-full rounded-lg p-6 text-white bg-cardDescription placeholder:text-white outline-transparent`}
+							} border w-full rounded-lg p-3 text-white bg-primary placeholder:text-white outline-transparent`}
 							placeholder="What's your register no?"
 						/>
 					</div>
@@ -189,7 +189,7 @@ const OnbaordingUser = () => {
 							value={values.collegeEmail}
 							className={`${
 								errors.displayName ? 'border-red-500' : ''
-							} border w-full rounded-lg p-6 text-white bg-cardDescription placeholder:text-white outline-transparent`}
+							} border w-full rounded-lg p-3 text-white bg-primary placeholder:text-white outline-transparent`}
 							placeholder="What's your college email?"
 						/>
 					</div>
@@ -210,7 +210,7 @@ const OnbaordingUser = () => {
 							value={values.dept}
 							className={`${
 								errors.displayName ? 'border-red-500' : ''
-							} border w-full rounded-lg p-6 text-white bg-cardDescription placeholder:text-white outline-transparent`}
+							} border w-full rounded-lg p-3 text-white bg-primary placeholder:text-white outline-transparent`}
 							placeholder='Which department you belong to?'
 						/>
 					</div>
@@ -231,7 +231,7 @@ const OnbaordingUser = () => {
 							value={values.phoneNumber}
 							className={`${
 								errors.displayName ? 'border-red-500' : ''
-							} border w-full rounded-lg p-6 text-white bg-cardDescription placeholder:text-white outline-transparent`}
+							} border w-full rounded-lg p-3 text-white bg-primary placeholder:text-white outline-transparent`}
 							placeholder="What's your phone number?"
 						/>
 					</div>
@@ -252,13 +252,13 @@ const OnbaordingUser = () => {
 							value={values.year}
 							className={`${
 								errors.displayName ? 'border-red-500' : ''
-							} border w-full rounded-lg p-6 text-white bg-cardDescription placeholder:text-white outline-transparent`}
+							} border w-full rounded-lg p-3 text-white bg-primary placeholder:text-white outline-transparent`}
 							placeholder='Which year are you in? eg: 1st year, ...'
 						/>
 					</div>
 					<button
 						type='submit'
-						className='border px-10 text-3xl uppercase py-2 mt-4 rounded-full bg-[#14094fe6] hover:bg-purple-600 duration-300'
+						className='border px-10 text-lg uppercase py-2 mt-6 w-full rounded-lg bg-white text-primary font-extrabold hover:bg-primary hover:text-white  duration-300'
 						disabled={loading}
 					>
 						{loading ? 'Onboarding...' : 'Submit'}

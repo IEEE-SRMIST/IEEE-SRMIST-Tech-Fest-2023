@@ -1,6 +1,6 @@
-import React from "react";
+
 import { useState } from 'react';
-import FAQCard from "../cards/FAQCard";
+import FAQCard from "./FAQCard";
 
 const FAQs: React.FC = () => {
 	const [open, setOpen] = useState<number | boolean>(false);
@@ -29,9 +29,9 @@ const FAQs: React.FC = () => {
 	]
 
 	return (
-		<div className="min-h-screen flex flex-col justify-center items-center">
-			<h1 className="text-5xl mb-6">FAQs</h1>
-			<div className="px-[40px] max-w-[1200px] mt-6">
+		<div className="mb-20 flex flex-col justify-center items-center">
+			<h1 className="text-4xl font-syne font-extrabold mb-6">FAQs</h1>
+			<div className="px-[40px] max-w-[1200px] ">
 				{accordianData.map((data, index) => {
 					return (
 						<FAQCard 

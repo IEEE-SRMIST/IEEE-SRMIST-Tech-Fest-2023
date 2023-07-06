@@ -42,7 +42,7 @@ export default function Home() {
 					loop
 					muted
 				>
-					<source src='/assets/video.webm' />
+					<source src='/assets/landing/bgVideo.mp4' />
 				</video>
 				<Hero />
 				<Sponsors />

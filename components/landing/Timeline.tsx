@@ -58,14 +58,14 @@ function Timeline() {
 	];
 
 	const icon = {
-		background: "#14094fe6",
-		color: "#1E429F",
+		background: "#3D248D",
+		color: "#fff",
 	};
 
 	return (
-		<div>
+		<div className="my-20">
 			<div className="flex justify-center items-center">
-				<h1 className="text-7xl">TimeLine</h1>
+				<h1 className="text-4xl uppercase font-syne font-extrabold">TimeLine</h1>
 			</div>
 			<div className="mt-10">
 				<VerticalTimeline
@@ -80,17 +80,21 @@ function Timeline() {
 								dateClassName="date"
 								icon={<MdOutlineEventNote />}
 								contentStyle={{
-									background: "#14094fe6",
+									background: "rgb(61, 36, 141, 0.5)",
+									color: "#fff",
+									border: "2px solid #fff",
+									borderBottom: "none",
+									borderRadius: "10px",
 								}}
-								iconStyle={{ background: "#14094fe6" }}
+								iconStyle={{ background: "#3D248D" }}
 							>
-								<h3 className="vertical-timeline-element-title text-3xl">
+								<h3 className="vertical-timeline-element-title text-xl text-white">
 									{element.title}
 								</h3>
-								<h5 className="vertical-timeline-element-subtitle text-2xl">
+								<h5 className="vertical-timeline-element-subtitle text-xs text-white pt-2">
 									{element.location}
 								</h5>
-								<p id="description">
+								<p id="description" className="text-sm text-white">
 									{element.description}
 								</p>
 							</VerticalTimelineElement>

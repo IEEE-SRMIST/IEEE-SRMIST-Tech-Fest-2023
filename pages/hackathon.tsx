@@ -6,3 +6,5 @@ function hackathon() {
 	);
 }
 
+export default hackathon;
+
