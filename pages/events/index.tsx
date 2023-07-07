@@ -36,7 +36,9 @@ export const events: Event[] = [
 const EventsPage = () => {
   return (
     <>
-      <h1 className="text-center text-4xl font-syne font-extrabold mt-32">EVENTS</h1>
+      <h1 className="text-center text-4xl font-syne font-extrabold mt-32">
+        EVENTS
+      </h1>
       <div className="card-section flex justify-center items-center">
         <div className="flex-col justify-start w-9/12">
           <div className="flex flex-col mt-10">
