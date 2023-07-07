@@ -14,6 +14,7 @@ module.exports = {
       },
       colors: {
         primary: "#3D248D",
+        secondary:"rgb(20, 9, 78)",
         cardDescription: "#B2BEFF",
       },
       animation: {
