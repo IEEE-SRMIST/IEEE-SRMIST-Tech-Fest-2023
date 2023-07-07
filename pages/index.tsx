@@ -19,15 +19,26 @@ export default function Home() {
 			const handleScroll = () => {
 				const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 				const scrollRatio = scrollTop / (scrollHeight - clientHeight);
-				const initialX = 0; 
+				const viewportWidth = window.innerWidth;
+				const viewportHeight = window.innerHeight;
+				const initialX = 0;
 				const middleX = 90;
 				const finalX = 50;
-				const initialY = 0; 
+				const initialY = 0;
 				const middleY = 50;
-				const finalY = scrollRatio * 100; 
+				const finalY = scrollRatio * 100;
+		
 
 				let currentX, currentY;
+				const isMobile = window.innerWidth <= 768; 
 
+		
+				if (isMobile) {
+				  const ratio = scrollRatio/0.5;
+				  currentX = initialX + (middleX - initialX) * ratio;
+				  currentY = initialY + (middleY - initialY) * ratio;
+				} 
+				else{
 				if (scrollRatio < 0.5) {
 					const ratio = scrollRatio / 0.5;
 					currentX = initialX + (middleX - initialX) * ratio;
@@ -37,14 +48,23 @@ export default function Home() {
 					currentX = middleX + (finalX - middleX) * ratio;
 					currentY = middleY + (finalY - middleY) * ratio;
 				}
-
+			}
+			if(window.innerWidth>768){
 				const gradientColor = `radial-gradient(ellipse at ${currentX}% ${currentY}%, rgb(86, 53, 173) 0%,
-				rgb(20, 9, 78) 50%`; 
+				rgb(20, 9, 78) 40%`;
 
 				scrollGradientElement.style.background = gradientColor;
+			}
+			else{
+				const gradientColor = `radial-gradient(circle at ${currentX}% ${currentY}%, rgb(86, 53, 173) 0%,
+				rgb(20, 9, 78) 20%`;
+
+				scrollGradientElement.style.background = gradientColor;
+			}
 			};
 
 			window.addEventListener('scroll', handleScroll);
+			window.addEventListener('resize', handleScroll);
 			return () => {
 				window.removeEventListener('scroll', handleScroll);
 			};
