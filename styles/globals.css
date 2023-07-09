@@ -3,208 +3,211 @@
 @tailwind utilities;
 
 @layer components {
-	#__next {
-		@apply flex min-h-full flex-col text-white;
-	}
+  #__next {
+    @apply flex min-h-full flex-col text-white;
+  }
 }
 
 html {
-	--scroll-behavior: smooth !important;
-	scroll-behavior: smooth !important;
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
 }
 
 body {
-	width: 100%;
-	height: 100vh;
-	background-color: '#FAF9F6';
-	font-family: 'Space Mono', monospace;
-	/* font-family: 'Syne', sans-serif; */
-	background-image: radial-gradient(
+  width: 100%;
+  height: 100vh;
+  background-color: "#FAF9F6";
+  font-family: "Space Mono", monospace;
+  /* font-family: 'Syne', sans-serif; */
+  /* background-image: radial-gradient(
 		50% 50% at 50% 50%,
 		rgb(86, 53, 173) 0%,
 		rgb(20, 9, 78) 150%
-	);
+	); */
+  background-color: rgb(20, 9, 78);
+  z-index: 0;
 }
 
 a {
-	color: inherit;
-	text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 #videoBg {
-	width: 100%;
-	height: 100vh;
-	object-fit: cover;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
 }
 
 .img {
-	position: relative;
-	width: 400px;
-	height: 300px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-image: url(https://cdn.discordapp.com/attachments/918024642860548126/1121449332030316624/image__1_-removebg-preview.png);
-	filter: brightness(0) invert(1);
+  position: relative;
+  width: 400px;
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(https://cdn.discordapp.com/attachments/918024642860548126/1121449332030316624/image__1_-removebg-preview.png);
+  filter: brightness(0) invert(1);
 }
 .img::before,
 .img::after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	width: 400px;
-	height: 300px;
-	clip: rect(0, 0, 0, 0);
-	overflow: hidden;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 400px;
+  height: 300px;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .img::before {
-	left: -6px;
-	animation: glitch-effect 2s infinite linear alternate-reverse;
-	background-image: url(https://cdn.discordapp.com/attachments/918024642860548126/1121449332030316624/image__1_-removebg-preview.png);
-	filter: grayscale(100%) sepia(100%) saturate(350%) hue-rotate(240deg)
-		brightness(121%) contrast(121%);
+  left: -6px;
+  animation: glitch-effect 2s infinite linear alternate-reverse;
+  background-image: url(https://cdn.discordapp.com/attachments/918024642860548126/1121449332030316624/image__1_-removebg-preview.png);
+  filter: grayscale(100%) sepia(100%) saturate(350%) hue-rotate(240deg)
+    brightness(121%) contrast(121%);
 }
 .img::after {
-	left: 6px;
-	animation: glitch-effect 3s infinite linear alternate-reverse;
-	background-image: url(https://cdn.discordapp.com/attachments/918024642860548126/1121449332030316624/image__1_-removebg-preview.png);
-	filter: grayscale(100%) sepia(100%) saturate(350%) hue-rotate(120deg) brightness(121%) contrast(121%);
+  left: 6px;
+  animation: glitch-effect 3s infinite linear alternate-reverse;
+  background-image: url(https://cdn.discordapp.com/attachments/918024642860548126/1121449332030316624/image__1_-removebg-preview.png);
+  filter: grayscale(100%) sepia(100%) saturate(350%) hue-rotate(120deg)
+    brightness(121%) contrast(121%);
 }
 
 .ReactCollapse--collapse {
-	transition: height 500ms;
+  transition: height 500ms;
 }
 
 .link-underline {
-	border-bottom-width: 0;
-	background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
-	background-size: 0 3px;
-	background-position: 0 100%;
-	background-repeat: no-repeat;
-	transition: background-size .5s ease-in-out;
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(#fff, #fff);
+  background-size: 0 3px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s ease-in-out;
 }
 
 .link-underline-black {
-	background-image: linear-gradient(transparent, transparent), linear-gradient(rgb(207, 161, 241), rgb(212, 136, 236))
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(rgb(207, 161, 241), rgb(212, 136, 236));
 }
 .link-underline:hover {
-	background-size: 100% 3px;
-	background-position: 0 100%
+  background-size: 100% 3px;
+  background-position: 0 100%;
 }
 
 @keyframes glitch-effect {
-	0% {
-		clip: rect(299px, 400px, 56px, 0);
-	}
-	5.8823529412% {
-		clip: rect(126px, 400px, 204px, 0);
-	}
-	11.7647058824% {
-		clip: rect(74px, 400px, 62px, 0);
-	}
-	17.6470588235% {
-		clip: rect(123px, 400px, 252px, 0);
-	}
-	23.5294117647% {
-		clip: rect(280px, 400px, 225px, 0);
-	}
-	29.4117647059% {
-		clip: rect(25px, 400px, 202px, 0);
-	}
-	35.2941176471% {
-		clip: rect(164px, 400px, 60px, 0);
-	}
-	41.1764705882% {
-		clip: rect(110px, 400px, 214px, 0);
-	}
-	47.0588235294% {
-		clip: rect(88px, 400px, 104px, 0);
-	}
-	52.9411764706% {
-		clip: rect(279px, 400px, 102px, 0);
-	}
-	58.8235294118% {
-		clip: rect(64px, 400px, 146px, 0);
-	}
-	64.7058823529% {
-		clip: rect(47px, 400px, 12px, 0);
-	}
-	70.5882352941% {
-		clip: rect(296px, 400px, 166px, 0);
-	}
-	76.4705882353% {
-		clip: rect(202px, 400px, 264px, 0);
-	}
-	82.3529411765% {
-		clip: rect(183px, 400px, 248px, 0);
-	}
-	88.2352941176% {
-		clip: rect(27px, 400px, 36px, 0);
-	}
-	94.1176470588% {
-		clip: rect(266px, 400px, 195px, 0);
-	}
-	100% {
-		clip: rect(126px, 400px, 198px, 0);
-	}
+  0% {
+    clip: rect(299px, 400px, 56px, 0);
+  }
+  5.8823529412% {
+    clip: rect(126px, 400px, 204px, 0);
+  }
+  11.7647058824% {
+    clip: rect(74px, 400px, 62px, 0);
+  }
+  17.6470588235% {
+    clip: rect(123px, 400px, 252px, 0);
+  }
+  23.5294117647% {
+    clip: rect(280px, 400px, 225px, 0);
+  }
+  29.4117647059% {
+    clip: rect(25px, 400px, 202px, 0);
+  }
+  35.2941176471% {
+    clip: rect(164px, 400px, 60px, 0);
+  }
+  41.1764705882% {
+    clip: rect(110px, 400px, 214px, 0);
+  }
+  47.0588235294% {
+    clip: rect(88px, 400px, 104px, 0);
+  }
+  52.9411764706% {
+    clip: rect(279px, 400px, 102px, 0);
+  }
+  58.8235294118% {
+    clip: rect(64px, 400px, 146px, 0);
+  }
+  64.7058823529% {
+    clip: rect(47px, 400px, 12px, 0);
+  }
+  70.5882352941% {
+    clip: rect(296px, 400px, 166px, 0);
+  }
+  76.4705882353% {
+    clip: rect(202px, 400px, 264px, 0);
+  }
+  82.3529411765% {
+    clip: rect(183px, 400px, 248px, 0);
+  }
+  88.2352941176% {
+    clip: rect(27px, 400px, 36px, 0);
+  }
+  94.1176470588% {
+    clip: rect(266px, 400px, 195px, 0);
+  }
+  100% {
+    clip: rect(126px, 400px, 198px, 0);
+  }
 }
 
 @media (max-width: 420px) {
-	.img {
-		width: 275px;
-		height: 225px;
-	}
-	.img::before,
-	.img::after {
-		width: 275px;
-		height: 225px;
-	}
+  .img {
+    width: 275px;
+    height: 225px;
+  }
+  .img::before,
+  .img::after {
+    width: 275px;
+    height: 225px;
+  }
 }
-
 
 /* Sponsors starts */
 
 @keyframes slideAnim {
-	from {
-		transform: translateX(0%);
-	}
+  from {
+    transform: translateX(0%);
+  }
 
-	to {
-		transform: translateX(-100%);
-	}
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 .looper__innerList[data-animate="true"] .looper__listInstance {
-	animation: slideAnim linear infinite;
+  animation: slideAnim linear infinite;
 }
 
 .looper__innerList {
-	display: flex;
-	justify-content: center;
-	width: fit-content;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
 }
 
 .looper__innerList[data-animate="true"] .looper__listInstance {
-	animation: slideAnim linear infinite;
+  animation: slideAnim linear infinite;
 }
 
 .looper__listInstance {
-	display: flex;
-	width: max-content;
+  display: flex;
+  width: max-content;
 
-	animation: none;
+  animation: none;
 }
 
 /* Sponsors ends */
-
