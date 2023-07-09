@@ -3,7 +3,7 @@ import { AiOutlineTwitter, AiFillLinkedin, AiFillMail, AiFillInstagram } from 'r
 
 const Footer: FunctionComponent = () => {
 	return (
-		<footer className='text-purple-300 text-center py-6'>
+		<footer className='text-purple-300 text-center py-6 bg-secondary'>
 			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
 				<div className='flex flex-col md:flex-row md:justify-between'>
 					<div className='mb-4 md:mb-0'>

@@ -19,11 +19,13 @@ body {
 	background-color: '#FAF9F6';
 	font-family: 'Space Mono', monospace;
 	/* font-family: 'Syne', sans-serif; */
-	background-image: radial-gradient(
+	/* background-image: radial-gradient(
 		50% 50% at 50% 50%,
 		rgb(86, 53, 173) 0%,
 		rgb(20, 9, 78) 150%
-	);
+	); */
+	background-color: rgb(20, 9, 78) ;
+	z-index: 0;
 }
 
 a {

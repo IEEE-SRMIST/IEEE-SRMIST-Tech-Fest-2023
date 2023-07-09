@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 export default function SingleEventCard() {
   return (
@@ -46,38 +46,43 @@ export default function SingleEventCard() {
           <p>Venue</p>
         </div>
 
-        {/* <div className="team-size"></div> conditionally rendered */}
-      </div>
-      <div className="event-description">
-        <h1 className="font-syne font-bold text-xl">Event Description</h1>
-        <p className="font-spaceMono text-cardDescription">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-          quidem distinctio aperiam nemo impedit facilis similique adipisci
-          consequuntur doloremque, consectetur ea autem, possimus eveniet,
-          provident tempora. Maiores nemo obcaecati facilis minima corrupti.
-        </p>
-      </div>
-      <div className="event-agenda">
-        <h1 className="font-syne font-bold text-xl mb-2">Event Agenda</h1>
-        <ul className="font-spaceMono text-cardDescription list-disc flex flex-col space-y-5 ml-5">
-          <li>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit
-            saepe incidunt quam?
-          </li>
-          <li>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit
-            saepe incidunt quam?
-          </li>
-          <li>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit
-            saepe incidunt quam?
-          </li>
-          <li>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit
-            saepe incidunt quam?
-          </li>
-        </ul>
-      </div>
-    </div>
-  );
+				{/* <div className="team-size"></div> conditionally rendered */}
+			</div>
+			<div className='event-description'>
+				<h1 className='font-syne font-bold text-xl'>
+					Event Description
+				</h1>
+				<p className='font-spaceMono text-cardDescription'>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Temporibus quidem distinctio aperiam nemo impedit facilis
+					similique adipisci consequuntur doloremque, consectetur ea
+					autem, possimus eveniet, provident tempora. Maiores nemo
+					obcaecati facilis minima corrupti.
+				</p>
+			</div>
+			<div className='event-agenda'>
+				<h1 className='font-syne font-bold text-xl mb-2'>
+					Event Agenda
+				</h1>
+				<ul className='font-spaceMono text-cardDescription list-disc flex flex-col space-y-5 ml-5'>
+					<li>
+						Lorem ipsum dolor sit amet consectetur, adipisicing
+						elit. Suscipit saepe incidunt quam?
+					</li>
+					<li>
+						Lorem ipsum dolor sit amet consectetur, adipisicing
+						elit. Suscipit saepe incidunt quam?
+					</li>
+					<li>
+						Lorem ipsum dolor sit amet consectetur, adipisicing
+						elit. Suscipit saepe incidunt quam?
+					</li>
+					<li>
+						Lorem ipsum dolor sit amet consectetur, adipisicing
+						elit. Suscipit saepe incidunt quam?
+					</li>
+				</ul>
+			</div>
+		</div>
+	);
 }
