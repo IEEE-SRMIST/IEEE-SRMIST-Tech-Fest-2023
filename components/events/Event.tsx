@@ -1,50 +1,68 @@
 import Image from 'next/image';
 
 export default function SingleEventCard() {
-  return (
-    <div className="w-3/4 p-10 z-1 shadow-[0_8px_32px_0_rgba(_31,38,135,0.37_)] rounded-3xl backdrop-blur-[_4px_] bg-white/10 backdrop-opacity-25 flex flex-col space-y-10 my-20">
-      <h1 className="font-syne font-extrabold text-center uppercase text-4xl">
-        Event Name
-      </h1>
-      <div className="image-section md:space-x-5 flex flex-col-reverse  md:flex-row justify-center items-center md:items-center md:h-[600px] mb-10">
-        <div className="speaker-img flex flex-col justify-center items-center">
-          <Image
-            src="/speak.png"
-            alt=""
-            className="rounded-full hover:-translate-y-3 duration-200 transition-all ease-in-out flex-shrink"
-            height={300}
-            width={300}
-          />
-          <h2 className="font-syne font-bold text-5xl text-white">
-            Kunal Keshan
-          </h2>
-          <p className="speaker-description font-syne text-cardDescription font-light text-xl w-3/4">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-            doloremque dignissimos a magnam, in reiciendis non minus molestias
-            quisquam error.
-          </p>
-        </div>
-        <Image
-          src="/testimg.jpg" // map image here
-          alt="Event cover"
-          className="rounded-2xl mb-10 md:scale-100 sm:scale-100 scale-125"
-          height={850}
-          width={850}
-        />
-      </div>
-      <div className="details-row flex justify-around">
-        <div className="date flex md:flex-row flex-col md:space-x-5 md:items-center justify-center">
-          <img src="/assets/event/date.png" className="invert" alt="" />
-          <p>Date</p>
-        </div>
-        <div className="time flex md:flex-row flex-col md:space-x-5 md:items-center justify-center">
-          <img src="/assets/event/clock.png" className="invert" alt="" />
-          <p>Time</p>
-        </div>
-        <div className="location flex md:flex-row flex-col md:space-x-5 md:items-center justify-center">
-          <img src="/assets/event/location.png" className="invert" alt="" />
-          <p>Venue</p>
-        </div>
+	return (
+		<div className='w-3/4 p-10 z-20 shadow-[0_8px_32px_0_rgba(_31,38,135,0.37_)] rounded-3xl backdrop-blur-[_4px_] bg-white/10 backdrop-opacity-25 flex flex-col space-y-10 my-20'>
+			<h1 className='font-syne font-extrabold text-center uppercase text-4xl'>
+				Event Name
+			</h1>
+			<div className='image-section space-x-5 flex items-center h-[600px] mb-10'>
+				<div className='speaker-img flex flex-col justify-center items-center'>
+					<Image
+						src='/SingleEventPage/assets/speaker.png'
+						alt=''
+						className='rounded-full hover:-translate-y-3 duration-200 transition-all ease-in-out'
+						height={300}
+						width={300}
+					/>
+					<h2 className='font-syne font-bold text-5xl text-white'>
+						Kunal Keshan
+					</h2>
+					<p className='speaker-description font-syne text-cardDescription font-light text-xl w-3/4'>
+						Lorem, ipsum dolor sit amet consectetur adipisicing
+						elit. Laboriosam doloremque dignissimos a magnam, in
+						reiciendis non minus molestias quisquam error.
+					</p>
+				</div>
+				<Image
+					src={'/test2.jpg'} // map image here
+					alt='Event cover'
+					className='rounded-3xl'
+					height={850}
+					width={850}
+				/>
+			</div>
+			<div className='details-row flex justify-around'>
+				<div className='date flex space-x-5 items-center'>
+					<Image
+						src='/assets/event/date.png'
+						className='w-full h-auto invert'
+						alt=''
+						width={100}
+						height={100}
+					/>
+					<p>Date</p>
+				</div>
+				<div className='time flex space-x-5 items-center'>
+					<Image
+						src='/assets/event/clock.png'
+						className='w-full h-auto invert'
+						alt=''
+						width={100}
+						height={100}
+					/>
+					<p>Time</p>
+				</div>
+				<div className='location flex space-x-5 items-center'>
+					<Image
+						src='/assets/event/location.png'
+						className='w-full h-auto invert'
+						alt=''
+						width={100}
+						height={100}
+					/>
+					<p>Venue</p>
+				</div>
 
 				{/* <div className="team-size"></div> conditionally rendered */}
 			</div>
