@@ -8,6 +8,7 @@ function Sponsors() {
 		{ url: '/assets/layouts/cake_blue.svg', name: 'INTERVIEW-CAKE Logo' },
 		{ url: '/assets/layouts/xyz-logo-color.svg', name: 'XYZ Logo' },
 		{ url: '/assets/layouts/Axure_RP_icon.svg', name: 'Axure Logo' },
+		{ url: '/assets/layouts/cake_blue.svg', name: 'INTERVIEW-CAKE Logo' },
 		{ url: '/assets/layouts/xyz-logo-color.svg', name: 'XYZ Logo' },
 		{ url: '/assets/layouts/Axure_RP_icon.svg', name: 'Axure Logo' },
 	];

@@ -9,51 +9,83 @@ function Timeline() {
   const timelineElements = [
     {
       id: 1,
-      title: "Frontend Developer",
-      location: "Dragontail, Ascana",
+      title: "Opening Ceremony",
+      time: "09:00 - 10:00",
       description:
-        "Converting data to a graphical interface, through the use of HTML, CSS, and JavaScript, so that users can view and interact with that data.",
-      date: "August 2016 - present",
+        "",
+      date: "24.7.23",
     },
     {
       id: 2,
-      title: "Backend Developer",
-      location: "Skystead, Craonia",
+      title: "Project submission ends",
+      time: "10:00 - 11:00",
       description:
-        "Working hand-in-hand with front-end developers by providing the outward facing web application elements server-side logic. Creating the logic to make the web app function properly, and accomplishing this through the use of server-side scripting languages.",
-      date: "June 2013 - August 2016",
+      "",
+      date: "24.7.23",
     },
     {
       id: 3,
-      title: "Quality Assurance Engineer",
-      location: "South Warren, Geshington",
+      title: "Game 1 (Imposter artist)",
+      time: "11:00 - 12:00",
       description:
-        "Assessing the quality of specifications and technical design documents in order to ensure timely, relevant and meaningful feedback.",
-      date: "September 2011 - June 2013",
+      "",
+      date: "24.7.23",
     },
     {
       id: 4,
-      title: "Oak Ridge College",
-      location: "South Warren, Geshington",
+      title: "Project pitch ",
+      time: "01:00 - 03:00",
       description:
-        "Online Course in Magical Beasts and Wonders of the World - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec scelerisque sagittis tellus, non ultrices lacus tempus vel.",
-      date: "September 2011",
+      "Tech talk series on electronics in the industry by 2 speakers",
+      date: "24.7.23",
     },
     {
       id: 5,
-      title: "Hawking College",
-      location: "Skystead, Craonia",
+      title: "Close of Day 1",
+      time: "03:00 - 04:00",
       description:
-        "College - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec scelerisque sagittis tellus, non ultrices lacus tempus vel.",
-      date: "2007 - 2011",
+      "",
+      date: "24.7.23",
     },
     {
       id: 6,
-      title: "Marble Hills Grammar School",
-      location: "Dragontail, Ascana",
+      title: "Opens day 2",
+      time: "09:00 - 9:15",
       description:
-        "Highschool - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec scelerisque sagittis tellus, non ultrices lacus tempus vel.",
-      date: "2003 - 2007",
+        "",
+      date: "25.7.23",
+    },
+    {
+      id: 7,
+      title: "Comic strip design",
+      time: "09:00 - 9:15",
+      description:
+        "R&D Tech talk/Hands-on workshop delivered by 1 speaker",
+      date: "25.7.23",
+    },
+    {
+      id: 8,
+      title: "Typing Round",
+      time: "10:15 - 11:00 ",
+      description:
+        "",
+      date: "25.7.23",
+    },
+    {
+      id: 9,
+      title: "Scavenger Hunt",
+      time: "01:00 - 03:00  ",
+      description:
+        "",
+      date: "25.7.23",
+    },
+    {
+      id: 10,
+      title: "Closing Ceremony",
+      time: "03:00 - 04:00",
+      description:
+        "",
+      date: "25.7.23",
     },
   ];
 
@@ -91,7 +123,7 @@ function Timeline() {
                   {element.title}
                 </h3>
                 <h5 className="vertical-timeline-element-subtitle text-xs text-white pt-2">
-                  {element.location}
+                  {element.time}
                 </h5>
                 <p id="description" className="text-sm text-white">
                   {element.description}

@@ -80,7 +80,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<nav className='fixed w-screen' style={{ zIndex: 2 }}>
+		<nav className='fixed w-screen' style={{ zIndex: 100 }}>
 			<div
 				className={`${color} flex justify-between px-10 py-4 transition-all duration-300`}
 			>
