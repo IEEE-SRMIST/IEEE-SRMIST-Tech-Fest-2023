@@ -1,18 +1,20 @@
 export interface Event {
   id?: string;
   name: string;
-  date?: Date;
+  date?: Date | string;
   location?: string;
+  speakers: any;
+  judges: any; // todo : define tyles after discussion
   description: string;
   cover: string;
   type?: string;
   slug?: string;
+  rules?: string[]; // Todo: make a type for rules
 }
-
-interface eventProps {
+export interface eventProps {
   event: Event;
   index: number;
 }
-interface timelineProps {
+export interface timelineProps {
   events: Event[];
 }
