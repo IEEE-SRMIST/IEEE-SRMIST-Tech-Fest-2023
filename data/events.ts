@@ -1,4 +1,4 @@
-import { Event } from "../types/types";
+import { Event } from "@/pages/events/types/types";
 export const events: Event[] = [
   {
     name: "TECHNO-ZEST",
