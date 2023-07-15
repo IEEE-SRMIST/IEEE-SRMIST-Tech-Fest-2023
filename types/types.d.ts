@@ -18,3 +18,11 @@ export interface eventProps {
 export interface timelineProps {
   events: Event[];
 }
+
+export interface Sponsor {
+  name: string;
+  img: string;
+  alt: string;
+  prize?: string;
+  link: string;
+}
