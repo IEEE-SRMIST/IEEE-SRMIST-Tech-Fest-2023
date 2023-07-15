@@ -1,28 +1,31 @@
+import { Timestamp } from 'firebase/firestore';
+
 export interface Event {
-  id?: string;
-  name: string;
-  date?: Date | string;
-  location?: string;
-  speakers: any;
-  judges: any; // todo : define tyles after discussion
-  description: string;
-  cover: string;
-  type?: string;
-  slug?: string;
-  rules?: string[]; // Todo: make a type for rules
+	id: string;
+	name: string;
+	date: {
+		start: Timestamp;
+		end: Timestamp;
+	};
+	speakers: any;
+	description: string[];
+	agenda: string[];
+	cover: string;
+	slug: string;
+	venue: string;
 }
 export interface eventProps {
-  event: Event;
-  index: number;
+	event: Event;
+	index: number;
 }
 export interface timelineProps {
-  events: Event[];
+	events: Event[];
 }
 
 export interface Sponsor {
-  name: string;
-  img: string;
-  alt: string;
-  prize?: string;
-  link: string;
+	name: string;
+	img: string;
+	alt: string;
+	prize?: string;
+	link: string;
 }

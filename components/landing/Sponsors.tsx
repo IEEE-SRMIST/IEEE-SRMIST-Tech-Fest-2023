@@ -18,7 +18,7 @@ function Sponsors() {
 							>
 								<Image
 									src={sponsor.img}
-									alt={sponsor.name}
+									alt={sponsor.alt}
 									width={40}
 									height={40}
 									className='h-full w-full object-contain'
