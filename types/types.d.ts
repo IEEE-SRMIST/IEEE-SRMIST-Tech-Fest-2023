@@ -14,6 +14,7 @@ export interface Event {
 	slug: string;
 	venue: string;
 	attendees: string[];
+	location?: string;
 }
 export interface eventProps {
 	event: Event;
