@@ -124,7 +124,6 @@ const Navbar = () => {
 						Dashboard
 					</Link>
 				)}
-
 				<div className='lg:hidden flex'>
 					<button onClick={toggleMenu} className='focus:outline-none'>
 						<svg

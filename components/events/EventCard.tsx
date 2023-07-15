@@ -1,8 +1,10 @@
 import { eventProps } from "@/pages/events/types/types";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 
 const EventCard = (props: eventProps) => {
+  const linkName = "Read More >> ";
   return (
     <div
       className={`flex flex-col md:flex-row rounded-lg border border-white/25 shadow-white/30 bg-white/10 hover:bg-white/20 backdrop-blur-sm backdrop-opacity-80 transition ease-in-out duration-500 hover:transition hover:ease-in-out hover:duration-500 lg:w-[800px] ${
@@ -24,9 +26,18 @@ const EventCard = (props: eventProps) => {
             {props.event.name}
           </h1>
         </Link>
-        <p className="font-spaceMono text-white text-md">
-          {props.event.description}
-        </p>
+        {props.event.description.length > 400 ? (
+          <p className="font-spaceMono text-white text-md">
+            {`${props.event.description.slice(0, 400)}... `}
+            <Link href={`events/${props.event.slug}`}>
+              <span className="text-cardDescription">{linkName}</span>
+            </Link>
+          </p>
+        ) : (
+          <p className="font-spaceMono text-white text-md">
+            {props.event.description}
+          </p>
+        )}
       </div>
     </div>
   );
