@@ -1,3 +1,4 @@
+
 import EventCard from "@/components/events/EventCard";
 import Timeline from "@/components/events/Timeline";
 import { useEffect, useRef } from "react";
@@ -75,6 +76,7 @@ const EventsPage = () => {
       </div>
     </>
   );
+
 };
 
 export default EventsPage;

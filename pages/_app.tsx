@@ -38,10 +38,10 @@ export default function App({ Component, pageProps }: AppProps) {
 						className={`${syne.variable} ${spaceMono.variable} font-spaceMono w-full`}
 					>
 						<Component {...pageProps} />
-						<Toaster position='bottom-right' />
 					</main>
 				</PublicLayout>
 			</AuthProvider>
+			<Toaster position='bottom-right' />
 		</>
 	);
 }

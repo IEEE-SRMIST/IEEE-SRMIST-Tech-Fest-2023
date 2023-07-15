@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import { useFormik, FormikHelpers } from 'formik';
+import { useFormik } from 'formik';
 import { useAppStore } from '@/store/store';
 import * as Yup from 'yup';
 import { updateDoc, doc } from 'firebase/firestore';
-import { FirebaseDb } from '@/firebase';
+import { FirebaseDb, FirebaseAuth } from '@/firebase';
 import { toast } from 'react-hot-toast';
+import { signOut } from 'firebase/auth';
+import { useRouter } from 'next/router';
 
 interface Values {
 	displayName: string;
@@ -59,6 +61,7 @@ const onboardingContent = [
 const OnbaordingUser = () => {
 	const { user } = useAppStore();
 	const [loading, setLoading] = useState(false);
+	const router = useRouter();
 
 	const handleOnboard = async (values: Values) => {
 		try {
@@ -77,6 +80,18 @@ const OnbaordingUser = () => {
 		} finally {
 			setLoading(false);
 		}
+	};
+
+	const handleUndoOnboard = async () => {
+		toast
+			.promise(signOut(FirebaseAuth), {
+				loading: 'Going back...',
+				success: 'Onboarding cancelled',
+				error: 'Unable to exit onboarding. Try again later',
+			})
+			.then(() => {
+				router.reload();
+			});
 	};
 
 	const { handleChange, values, errors, handleSubmit } = useFormik({
@@ -262,6 +277,13 @@ const OnbaordingUser = () => {
 						disabled={loading}
 					>
 						{loading ? 'Onboarding...' : 'Submit'}
+					</button>
+					<button
+						onClick={handleUndoOnboard}
+						type='button'
+						className='mt-4 underline hover:text-rose-400 transition-all duration-300 underline-offset-4'
+					>
+						Onboard some other time? Click here to go back.
 					</button>
 				</form>
 			</section>
