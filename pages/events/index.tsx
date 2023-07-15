@@ -2,7 +2,7 @@
 import EventCard from "@/components/events/EventCard";
 import Timeline from "@/components/events/Timeline";
 import { useEffect, useRef } from "react";
-import { events } from "./data/data";
+import { events } from "@/data/events";
 
 const EventsPage = () => {
   const scrollGradientRef = useRef<HTMLDivElement>(null);
