@@ -6,6 +6,7 @@ export interface IUser extends User {
 	year: string;
 	dept: string;
 	collegeEmail: string;
+	attending: string[];
 }
 
 export interface UserSlice {

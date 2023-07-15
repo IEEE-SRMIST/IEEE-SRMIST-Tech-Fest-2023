@@ -13,6 +13,7 @@ export interface Event {
 	cover: string;
 	slug: string;
 	venue: string;
+	attendees: string[];
 }
 export interface eventProps {
 	event: Event;

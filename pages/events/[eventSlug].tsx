@@ -19,6 +19,7 @@ import safeJsonStringify from 'safe-json-stringify';
 import { AiFillCalendar } from 'react-icons/ai';
 import { BiMapAlt, BiTime } from 'react-icons/bi';
 import Head from 'next/head';
+import RegisterEventButton from '@/components/events/RegisterEventButton';
 
 const SingleEventPage: NextPage<
 	InferGetStaticPropsType<typeof getStaticProps>
@@ -44,8 +45,8 @@ const SingleEventPage: NextPage<
 							/>
 						</div>
 					</div>
-					<div className='grid grid-cols-4'>
-						<div className='flex gap-8 col-span-3 item-center flex-wrap'>
+					<div className='grid grid-cols-1 md:grid-cols-3'>
+						<div className='flex gap-8 md:col-span-2 item-center flex-wrap'>
 							<div className='flex gap-8'>
 								<AiFillCalendar size={40} />
 								<p className='max-w-[20ch] text-sm md:text-base'>
@@ -89,7 +90,9 @@ const SingleEventPage: NextPage<
 								</p>
 							</div>
 						</div>
-						<div></div>
+						<div>
+							<RegisterEventButton eventId={event.id} />
+						</div>
 					</div>
 					<div className='event-description'>
 						<h1 className='font-syne font-bold text-xl'>
