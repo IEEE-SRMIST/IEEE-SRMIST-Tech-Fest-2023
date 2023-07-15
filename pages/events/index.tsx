@@ -10,7 +10,6 @@ import safeJsonStringify from 'safe-json-stringify';
 const EventsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 	events,
 }) => {
-	console.log(events);
 	const scrollGradientRef = useRef<HTMLDivElement>(null);
 	useEffect(() => {
 		const scrollGradientElement = scrollGradientRef.current;

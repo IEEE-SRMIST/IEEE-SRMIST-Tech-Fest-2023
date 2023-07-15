@@ -3,11 +3,11 @@ import sponsors from '@/data/sponsors';
 
 function Sponsors() {
 	return (
-		<div className='w-full flex flex-col gap-6 items-center mt-20 overflow-hidden'>
+		<div className='w-full flex flex-col gap-6 items-center mt-20 '>
 			<div className='flex justify-center items-center w-full'>
 				<h1 className='text-4xl font-syne font-extrabold'>SPONSORS</h1>
 			</div>
-			<section className='w-full'>
+			<section className=''>
 				<div className='mx-auto block w-[120%] -translate-x-16 bg-themes-txt_primary px-10 py-16 text-themes-bg_primary'>
 					<div className='animate-marquee whitespace-nowrap'>
 						{sponsors.concat(sponsors).map((sponsor, index) => (

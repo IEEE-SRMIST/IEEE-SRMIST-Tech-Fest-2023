@@ -15,6 +15,7 @@ const RegisterEventButton: React.FC<RegisterEventButtonProps> = ({
 	eventId,
 }) => {
 	const [loading, setLoading] = useState(false);
+	const [registering, setRegistering] = useState(false);
 	const { user, setUser } = useAppStore();
 
 	const handleLoginWithFirebase = async () => {
@@ -35,10 +36,12 @@ const RegisterEventButton: React.FC<RegisterEventButtonProps> = ({
 					...(/[a-z]{2}[0-9]{4}@srmist\.edu\.in/g.test(
 						response.user.email!
 					) && { collegeEmail: response.user.email }),
+					uid: response.user.uid,
 				});
 			}
 			setUser(response.user as IUser);
 		} catch (error) {
+			console.log(error);
 			if (error instanceof FirebaseError) {
 				switch (error.code) {
 					case 'auth/popup-closed-by-user': {
@@ -58,48 +61,30 @@ const RegisterEventButton: React.FC<RegisterEventButtonProps> = ({
 		}
 	};
 
-	const RegisterButton = () => {
-		const [registering, setRegistering] = useState(false);
-
-		const handleRegisterForEvent = async () => {
-			try {
-				setRegistering(true);
-				const userRef = doc(FirebaseDb, 'users', user?.uid as string);
-				const eventRef = doc(FirebaseDb, 'events', eventId);
-				await updateDoc(userRef, {
-					attending: arrayUnion(eventId),
-				});
-				await updateDoc(eventRef, {
-					attendees: arrayUnion(user?.email),
-				});
-				setUser({
-					...user,
-					attending: user?.attending
-						? [...user?.attending, eventId]
-						: [eventId],
-				} as IUser);
-				toast.success('Registered for event!');
-			} catch (error) {
-				console.log(error);
-				toast.error('Unable to Register. Try again later.');
-			} finally {
-				setRegistering(false);
-			}
-		};
-
-		return (
-			<button
-				onClick={handleRegisterForEvent}
-				className={`${
-					registering
-						? 'grayscale text-gray-500 border-gray-500'
-						: 'hover:bg-white hover:text-primary'
-				} border w-full text-2xl px-10 py-2 rounded-full font-semibold duration-300`}
-				disabled={registering}
-			>
-				{registering ? 'Registering...' : 'Register'}
-			</button>
-		);
+	const handleRegisterForEvent = async () => {
+		try {
+			setRegistering(true);
+			const userRef = doc(FirebaseDb, 'users', user?.uid as string);
+			const eventRef = doc(FirebaseDb, 'events', eventId);
+			await updateDoc(userRef, {
+				attending: arrayUnion(eventId),
+			});
+			await updateDoc(eventRef, {
+				attendees: arrayUnion(user?.email),
+			});
+			setUser({
+				...user,
+				attending: user?.attending
+					? [...user?.attending, eventId]
+					: [eventId],
+			} as IUser);
+			toast.success('Registered for event!');
+		} catch (error) {
+			console.log(error);
+			toast.error('Unable to Register. Try again later.');
+		} finally {
+			setRegistering(false);
+		}
 	};
 
 	return (
@@ -117,13 +102,23 @@ const RegisterEventButton: React.FC<RegisterEventButtonProps> = ({
 					{loading ? 'Logging In...' : 'Login to Register'}
 				</button>
 			) : user?.attending &&
-			  user?.attending.findIndex((ids) => ids === eventId) > -1 ? (
+			  user?.attending?.findIndex((ids) => ids === eventId) > -1 ? (
 				<p>
 					You&apos;ve registered for this event. Visit Dashboard to
 					view your events.
 				</p>
 			) : (
-				<RegisterButton />
+				<button
+					onClick={handleRegisterForEvent}
+					className={`${
+						registering
+							? 'grayscale text-gray-500 border-gray-500'
+							: 'hover:bg-white hover:text-primary'
+					} border w-full text-2xl px-10 py-2 rounded-full font-semibold duration-300`}
+					disabled={registering}
+				>
+					{registering ? 'Loading...' : 'Register'}
+				</button>
 			)}
 		</div>
 	);

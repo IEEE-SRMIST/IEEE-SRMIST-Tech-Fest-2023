@@ -68,7 +68,7 @@ export default function Home() {
 			<Head>
 				<title>TechnoZest | IEEE SRM SB</title>
 			</Head>
-			<main className='relative flex flex-col justify-start items-center w-full min-h-screen'>
+			<main className='relative flex flex-col justify-start items-center w-full min-h-screen overflow-hidden'>
 				<video
 					id='videoBg'
 					className='-z-10 absolute top-0'

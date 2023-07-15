@@ -56,6 +56,7 @@ const Navbar = () => {
 					...(/[a-z]{2}[0-9]{4}@srmist\.edu\.in/g.test(
 						response.user.email!
 					) && { collegeEmail: response.user.email }),
+					uid: response.user.uid,
 				});
 			}
 			setUser(response.user as IUser);
@@ -87,7 +88,7 @@ const Navbar = () => {
 				<div className='cursor-pointer'>
 					<div>
 						<Image
-							src='/assets/layouts/logo.svg'
+							src='/assets/logo.svg'
 							alt='logo'
 							width={50}
 							height={50}
